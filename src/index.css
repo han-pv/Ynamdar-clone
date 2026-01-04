@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+button{
+  cursor: pointer;
+}
+
+@theme {
+  --color-custom-orange: #ec6323;
+  --color-custom-gray: #f3f4f6;
+  --color-custom-red: #ff0000;
+  --color-custom-blue: #4b5563;
+}
