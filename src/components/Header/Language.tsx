@@ -4,7 +4,7 @@ import Button from "./Button"
 function Language() {
   return (
     <div>
-      <Button title="">
+      <Button>
         <GrLanguage size={24} className="text-custom-blue font-bold"/>
       </Button>
     </div>

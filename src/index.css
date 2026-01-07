@@ -4,6 +4,10 @@ button{
   cursor: pointer;
 }
 
+body{
+  background-color: #f3f4f6;
+}
+
 @theme {
   --color-custom-orange: #ec6323;
   --color-custom-gray: #f3f4f6;

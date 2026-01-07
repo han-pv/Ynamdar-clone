@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 
 type ButtonType = {
   children:ReactNode;
-  title:string;
+  title?:string;
   action?:()=>void
 }
 

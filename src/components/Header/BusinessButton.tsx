@@ -1,6 +1,5 @@
 import type { BusinessButtonType } from "../../types/Header"
 
-
 function BusinessButton({ image, name, active, setActive }: BusinessButtonType) {
   return (
     <>
