@@ -1,0 +1,7 @@
+1. Category acylanda overflow hidden bolmaly we useEffect ulanmaly
+2. Category left-0 goymaly yogsam dashyna chykyan eken
+3. Icon map diyip images icinde icon file doredip react iconlary export etmeli we category icinde ulanmaly
+	categories.map((category, key) => {
+              const Icon = (iconMap as any)[category.icon];
+4. button stilini sazlamaly
+5. onMouseEnter ulanmally activi sazlamaly

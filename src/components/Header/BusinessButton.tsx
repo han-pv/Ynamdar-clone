@@ -1,9 +1,11 @@
+import { useNavigate } from "react-router-dom"
 import type { BusinessButtonType } from "../../types/Header"
 
 function BusinessButton({ image, name, active, setActive }: BusinessButtonType) {
+  const navigate = useNavigate()
   return (
     <>
-      <button onClick={()=>setActive(name)} className={'relative bg-white px-3.5 pt-2 pb-1.5 h-10 w-content '+(name==active ? "rounded-t-md" : 'rounded-md')}>
+      <button onClick={()=>(setActive(name),navigate('/'))} className={'relative bg-white px-3.5 pt-2 pb-1.5 h-10 w-content '+(name==active ? "rounded-t-md" : 'rounded-md')}>
         <img className='w-full h-full object-contain' src={image} alt="" />
         {
           name == active && <>

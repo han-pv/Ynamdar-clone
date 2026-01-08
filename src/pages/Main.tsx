@@ -1,6 +1,6 @@
 function Main() {
   return (
-    <div>Main</div>
+    <div className="h-screen">Main</div>
   )
 }
 
