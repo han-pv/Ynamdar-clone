@@ -3,10 +3,12 @@ import Top from "./Top"
 
 function Header() {
   return (
-    <header>
-      <Top />
+    <>
+      <header>
+        <Top />
+      </header>
       <Navbar />
-    </header>
+    </>
   )
 }
 

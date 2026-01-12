@@ -1,0 +1,76 @@
+1. Search ishletmeli
+2. fixed ishletmeli nav-i header dashyna chykarmaly
+3. Lang ishletmeli
+  npm install i18next react-i18next
+-------------------------------------
+  src/i18n/locales/tm.json
+  src/i18n/locales/ru.json
+  src/i18n/locales/en.json
+
+  {
+    "welcome": "Welcome",
+    "login": "Login",
+    "logout": "Logout"
+  }
+-------------------------------------
+  src/i18n/index.ts
+
+  import i18n from "i18next";
+  import { initReactI18next } from "react-i18next";
+
+  import en from "./locales/en.json";
+  import ru from "./locales/ru.json";
+  import tm from "./locales/tm.json";
+
+  i18n
+    .use(initReactI18next)
+    .init({
+      resources: {
+        en: { translation: en },
+        ru: { translation: ru },
+        tm: { translation: tm }
+      },
+      lng: localStorage.getItem("lang") || "en",
+      fallbackLng: "en",
+    });
+
+  export default i18n;
+
+-------------------------------------
+
+  src/main.tsx
+  import "./i18n"; => only import
+-------------------------------------
+  import { useTranslation } from "react-i18next";
+
+  const Home = () => {
+    const { t } = useTranslation();
+
+    return (
+      <>
+        <h1>{t("welcome")}</h1>
+        <button>{t("login")}</button>
+      </>
+    );
+  };
+
+-------------------------------------
+  import i18n from "i18next";
+
+  const LanguageSwitcher = () => {
+    const changeLang = (lang: string) => {
+      i18n.changeLanguage(lang);
+      localStorage.setItem("lang", lang);
+    };
+
+    return (
+      <div>
+        <button onClick={() => changeLang("en")}>EN</button>
+        <button onClick={() => changeLang("ru")}>RU</button>
+        <button onClick={() => changeLang("tm")}>TM</button>
+      </div>
+    );
+  };
+
+  export default LanguageSwitcher;
+-------------------------------------

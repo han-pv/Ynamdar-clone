@@ -11,23 +11,25 @@ import { RxArchive } from 'react-icons/rx';
 import { IoMdHeartEmpty } from 'react-icons/io';
 import { BsCart2 } from 'react-icons/bs';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 function Navbar() {
   const navigate = useNavigate();
+  const {t} = useTranslation()
   const [open,setOpen] = useState<boolean>(false)
   return (
-    <div className='bg-white py-2 text-custom-blue h-15 shadow-lg'>
-      <div onClick={()=>setOpen(false)} className={"absolute top-29.5 left-0 w-full h-[calc(100vh-118px)] backdrop-blur-[2px] "+(open ? "scale-100" : "scale-0")}></div>
+    <div className='bg-white py-2 text-custom-blue h-15 shadow-lg sticky top-0'>
+      <div onClick={()=>setOpen(false)} className={"absolute top-15 left-0 w-full h-[calc(100vh-118px)] backdrop-blur-[2px] "+(open ? "scale-100" : "scale-0")}></div>
       <div className="relative container mx-auto px-3 flex items-center h-full">
         <Category open={open} setOpen={setOpen}/>
         <Stick />
-        <Button title='Brendler' action={() => navigate('brands')}>
+        <Button title={t('brands')} action={() => navigate('brands')}>
           <FiLayers size={20} className='text-custom-blue font-bold mr-3' />
         </Button>
         <Search />
         <Language />
         <Stick />
-        <Button title='Içeri gir'>
+        <Button title={t('login')}>
           <GrLogin size={20} className='text-custom-blue font-bold mr-3' />
         </Button>
         <Stick />

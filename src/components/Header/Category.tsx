@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import categories from "../../data/category.json"
 import { icons } from "../../assets/images/icons";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 type CategoryPropType = {
   open: boolean
@@ -12,7 +13,7 @@ type CategoryPropType = {
 
 function Category({ open, setOpen }: CategoryPropType) {
   const [active, setActive] = useState(categories[0])
-
+  const {t} = useTranslation()
   // 1. Hemme renderde ishleyar
   // 2. Bir gezek ishleyar
   // 3. Bir state ucin ishlar yaly edip bolyar
@@ -26,12 +27,12 @@ function Category({ open, setOpen }: CategoryPropType) {
 
   return (
     <div>
-      <Button title={'Kategoriýalar'} action={() => setOpen(!open)}>
+      <Button title={t("categories")} action={() => setOpen(!open)}>
         <BiCategory size={24} className="text-custom-blue font-bold mr-3" />
       </Button>
 
 
-      <div className={"grid grid-cols-4 gap-3 px-5 absolute top-12 left-0 w-full bg-white h-[calc(100vh-118px)] transition-opacity duration-200  " + (open ? "opacity-100 scale-100" : "opacity-0 scale-0")}>
+      <div className={"grid grid-cols-4 gap-3 px-5 absolute top-12 left-0 w-full bg-white h-[calc(100vh-118px)] transition-all duration-200 " + (open ? "opacity-100 visible" : "opacity-0 invisible")}>
         <div className="overflow-auto py-5">
           {
             categories.map((category, key) => {
