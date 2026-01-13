@@ -1,5 +1,7 @@
 {
   "categories":"Categories",
   "brands":"Brands",
-  "login":"Login"
+  "login":"Login",
+  "signUp":"Sign up",
+  "search":"Search product by name..."
 }

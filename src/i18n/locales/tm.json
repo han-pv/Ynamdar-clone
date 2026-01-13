@@ -1,5 +1,7 @@
 {
-  "categories":"Kategoriýalar",
-  "brands":"Brendler",
-  "login":"Içeri gir"
+  "categories": "Kategoriýalar",
+  "brands": "Brendler",
+  "login": "Içeri gir",
+  "signUp": "Agza bol",
+  "search": "Haryt ady boýynça gözle..."
 }

@@ -12,6 +12,7 @@ import { IoMdHeartEmpty } from 'react-icons/io';
 import { BsCart2 } from 'react-icons/bs';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import Login from './Login';
 
 function Navbar() {
   const navigate = useNavigate();
@@ -29,11 +30,9 @@ function Navbar() {
         <Search />
         <Language />
         <Stick />
-        <Button title={t('login')}>
-          <GrLogin size={20} className='text-custom-blue font-bold mr-3' />
-        </Button>
+        <Login />
         <Stick />
-        <Button title='Agza bol'>
+        <Button title={t('signUp')}>
           <GoPersonAdd size={20} className='text-custom-blue font-bold mr-3' />
         </Button>
         <Stick />

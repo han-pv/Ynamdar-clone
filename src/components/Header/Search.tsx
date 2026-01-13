@@ -1,9 +1,11 @@
 import { useState } from "react"
+import { useTranslation } from "react-i18next"
 import { CiSearch } from "react-icons/ci"
 import { useNavigate } from "react-router-dom"
 
 function Search() {
   const [keyword, setKeyword] = useState<string>("")
+  const {t} = useTranslation()
   const navigate = useNavigate()
 
   return (
@@ -13,7 +15,7 @@ function Search() {
         onKeyDown={(e) => e.key == 'Enter' && navigate("search?keyword="+keyword)}
         className="w-full py-2 px-3 outline-none"
         type="text"
-        placeholder="Haryt ady boýunça gözle..." />
+        placeholder={t("search")} />
       <CiSearch size={24} />
     </div>
   )
