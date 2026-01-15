@@ -1,0 +1,6 @@
+Sign up
+
+1. OutClick component
+
+1. regex  => /^\d{8}$/  => regex.test(value) 
+2. sign up

@@ -4,16 +4,18 @@ import { GrLogin } from 'react-icons/gr'
 import { useTranslation } from 'react-i18next'
 import Popup from './Popup'
 import Input from './Input'
-import ForgotPassword from './ForgotPassword'
+import { GoPersonAdd } from 'react-icons/go'
 
-function Login() {
+function Register() {
   const [open, setOpen] = useState(false)
   const [active, setActive] = useState<"phone" | "email">("phone")
   const { t } = useTranslation()
   const [data, setData] = useState({
     phone: "",
+    fullname:"",
     email: "",
     password: "",
+    passwordConfirm:"",
   })
 
   const handleData = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -27,28 +29,32 @@ function Login() {
 
   return (
     <div>
-      <Button title={t('login')} action={() => setOpen(true)}>
-        <GrLogin size={20} className='text-custom-blue font-bold mr-3' />
+      <Button title={t('signUp')} action={() => setOpen(true)}>
+        <GoPersonAdd size={20} className='text-custom-blue font-bold mr-3' />
       </Button>
 
-      <Popup sendData={sendData} open={open} setOpen={setOpen} title={t('login')} active={active} setActive={setActive}>
+      <Popup sendData={sendData} open={open} setOpen={setOpen} title={t('signUp')} active={active} setActive={setActive}>
         {
           active === "phone" ?
-            <div className='my-5'>
+            <div className='my-4'>
               <Input key={1} name="phone" label="Telefon" type="number" defaultValue="+993" onChange={handleData} value={data.phone} />
             </div> :
-            <div className='my-5'>
+            <div className='my-4'>
               <Input key={2} name="email" label="Email" type="email" onChange={handleData} value={data.email} />
             </div>
         }
-        <div className='mb-3'>
+        <div className='mb-4'>
+          <Input name='fullname' label="Fullname" type='text' onChange={handleData} value={data.fullname} />
+        </div>
+        <div className='mb-4'>
           <Input name='password' label="Password" type='password' onChange={handleData} value={data.password} />
         </div>
-
-        <ForgotPassword />
+        <div className='mb-4'>
+          <Input name='passwordConfirm' label="Password Confirm" type='password' onChange={handleData} value={data.passwordConfirm} />
+        </div>
       </Popup>
     </div>
   )
 }
 
-export default Login
+export default Register

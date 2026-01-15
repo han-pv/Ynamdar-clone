@@ -1,10 +1,9 @@
 import { BiX } from 'react-icons/bi'
 import type { PopupProps } from '../../types/Header'
-import { useState } from 'react'
 import { apple, google } from '../../assets/images'
 
-function Popup({ children, open, setOpen, title }: PopupProps) {
-  const [active,setActive] = useState<"phone" | "email">("phone")
+function Popup({ children, open, setOpen, title, active, setActive, sendData }: PopupProps) {
+
   return (
     <>
       <div onClick={() => setOpen(false)} className={'fixed top-0 left-0 h-screen bg-black/40 w-full backdrop-blur-[2px] transition-all ' + (open ? "opacity-100 visible" : "opacity-0 invisible")}></div>
@@ -15,13 +14,13 @@ function Popup({ children, open, setOpen, title }: PopupProps) {
         </button>
 
         <div className='flex justify-end'>
-          <button onClick={()=>setActive("phone")} className={'bg-gray-200 py-1 px-3 border border-gray-300 rounded-l shadow-inner  '+(active == "phone" && "text-blue-500 bg-white")}>Telefon</button>
-          <button onClick={()=>setActive("email")} className={'bg-gray-200 py-1 px-3 border border-gray-300 rounded-r shadow-inner  '+(active == "email" && "text-blue-500 bg-white")}>Email</button>
+          <button onClick={() => setActive("phone")} className={'bg-gray-200 py-1 px-3 border border-gray-300 rounded-l shadow-inner  ' + (active == "phone" && "text-blue-500 bg-white")}>Telefon</button>
+          <button onClick={() => setActive("email")} className={'bg-gray-200 py-1 px-3 border border-gray-300 rounded-r shadow-inner  ' + (active == "email" && "text-blue-500 bg-white")}>Email</button>
         </div>
 
         <div>{children}</div>
 
-        <button className='bg-custom-green text-white font-bold w-full hover:opacity-80 py-2 rounded'>{title}</button>
+        <button onClick={sendData} className='bg-custom-green text-white font-bold w-full hover:opacity-80 py-2 rounded'>{title}</button>
 
         <div className='relative flex justify-center my-3'>
           <div className='absolute top-3.5 border-b border-gray-300 w-full'></div>

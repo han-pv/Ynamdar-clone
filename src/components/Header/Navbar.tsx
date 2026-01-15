@@ -13,6 +13,7 @@ import { BsCart2 } from 'react-icons/bs';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import Login from './Login';
+import Register from './Register';
 
 function Navbar() {
   const navigate = useNavigate();
@@ -32,9 +33,7 @@ function Navbar() {
         <Stick />
         <Login />
         <Stick />
-        <Button title={t('signUp')}>
-          <GoPersonAdd size={20} className='text-custom-blue font-bold mr-3' />
-        </Button>
+        <Register />
         <Stick />
         <Button>
           <RxArchive size={20} className='text-custom-blue font-bold' />

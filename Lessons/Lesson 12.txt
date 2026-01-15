@@ -1,7 +1,6 @@
-login and sign up
+login
 
 1. Language active
 2. Login component
 3. Popup yasamaly
 4. rounded input
-5. regex  => /^\d{8}$/  => regex.test(value) 
