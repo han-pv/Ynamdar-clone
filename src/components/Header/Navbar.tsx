@@ -1,5 +1,5 @@
 import Category from './Category'
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { FiLayers } from "react-icons/fi";
 import Button from './Button';
 import Search from './Search';
@@ -17,6 +17,8 @@ import Register from './Register';
 
 function Navbar() {
   const navigate = useNavigate();
+  const {pathname} = useLocation();
+  console.log(pathname)
   const {t} = useTranslation()
   const [open,setOpen] = useState<boolean>(false)
   return (
@@ -25,7 +27,7 @@ function Navbar() {
       <div className="relative container mx-auto px-3 flex items-center h-full">
         <Category open={open} setOpen={setOpen}/>
         <Stick />
-        <Button title={t('brands')} action={() => navigate('brands')}>
+        <Button title={t('brands')} action={() => navigate('brands')} active={pathname == '/brands'}>
           <FiLayers size={20} className='text-custom-blue font-bold mr-3' />
         </Button>
         <Search />
@@ -35,15 +37,15 @@ function Navbar() {
         <Stick />
         <Register />
         <Stick />
-        <Button>
+        <Button action={()=>navigate('orders')} active={pathname === "/orders"}>
           <RxArchive size={20} className='text-custom-blue font-bold' />
         </Button>
         <Stick />
-        <Button>
+        <Button action={()=>navigate('wishlist')} active={pathname === "/wishlist"}>
           <IoMdHeartEmpty size={20} className='text-custom-blue font-bold' />
         </Button>
         <Stick />
-        <Button>
+        <Button action={()=>navigate('cart')} active={pathname === "/cart"}>
           <BsCart2 size={20} className='text-custom-blue font-bold' />
         </Button>
       </div>

@@ -1,0 +1,5 @@
+Forget password popup
+regex, checkValidate
+eye for password
+outclick
+header active buttons

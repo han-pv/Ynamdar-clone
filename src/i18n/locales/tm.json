@@ -3,5 +3,8 @@
   "brands": "Brendler",
   "login": "Içeri gir",
   "signUp": "Agza bol",
-  "search": "Haryt ady boýynça gözle..."
+  "search": "Haryt ady boýynça gözle...",
+  "phone":"Telefon",
+  "email":"Email",
+  "password":"Açar söz"
 }

@@ -24,4 +24,5 @@ export type InputProp = {
   name:string;
   onChange:(e:any)=>void;
   value:string;
+  regex?:RegExp;
 }

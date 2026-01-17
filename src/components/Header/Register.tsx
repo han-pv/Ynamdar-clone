@@ -37,7 +37,7 @@ function Register() {
         {
           active === "phone" ?
             <div className='my-4'>
-              <Input key={1} name="phone" label="Telefon" type="number" defaultValue="+993" onChange={handleData} value={data.phone} />
+              <Input key={1} regex={/^(6[0-5]|71)\d{6}$/} name="phone" label="Telefon" type="number" defaultValue="+993" onChange={handleData} value={data.phone} />
             </div> :
             <div className='my-4'>
               <Input key={2} name="email" label="Email" type="email" onChange={handleData} value={data.email} />
