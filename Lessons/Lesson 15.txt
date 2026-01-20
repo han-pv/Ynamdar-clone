@@ -1,0 +1,42 @@
+!!!Every change need to refresh.
+
+1. Install swiper => npm i swiper
+2. Create Banner component
+3. import {Swiper, SwiperSlide} from 'swiper/react | import 'swiper/css'
+4. Create global.d.ts file for css type error and write => declare module "swiper/css";
+5. for infinite loop write => loop={true}
+6. For default pagination do these inside Banner component=> 
+    import { Pagination } from 'swiper/modules'; | import 'swiper/css/pagination';
+  These write inside Swiper like props
+    modules={[Pagination]}
+    pagination={{ clickable: true }}
+  Css type error fix write it inside global.d.ts
+    declare module "swiper/css/pagination";
+7. Pagination style write className inside Swiper
+    className="
+      [&_.swiper-pagination-bullet]:bg-gray-400!
+      [&_.swiper-pagination-bullet]:opacity-100!
+      [&_.swiper-pagination-bullet]:w-10!
+      [&_.swiper-pagination-bullet]:rounded!
+      [&_.swiper-pagination-bullet]:h-1!
+      [&_.swiper-pagination-bullet-active]:bg-white!
+    "
+8. AutoPlay => import { Autoplay } from 'swiper/modules';
+    Swiper prop => modules={[Pagination, Autoplay]}
+    Swiper prop => autoplay={{ delay: 5000 }}
+9. Navigation Default
+    import { Navigation } from 'swiper/modules';
+    import 'swiper/css/navigation';
+  Swiper prop
+    modules={[Pagination, Autoplay, Navigation]}
+    navigation={true}
+  Declare global.d.ts
+    declare module "swiper/css/navigation";
+10. Custom full control navigation buttons.
+  Create two button outside of the Swiper and give className and these class name set navigation
+    navigation={{
+      nextEl: ".btn-next",
+      prevEl: ".btn-prev",
+    }}
+  Arrow icons name IoIosArrowBack, IoIosArrowForward
+11. Right swiper
