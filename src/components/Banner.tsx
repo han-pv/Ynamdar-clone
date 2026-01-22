@@ -55,13 +55,19 @@ function Banner() {
           </SwiperSlide>
         </Swiper>
 
-        <button className="btn-prev absolute h-full z-1 top-0 left-0 text-white px-5 hover:bg-linear-to-r hover:from-black/60 hover:to-transparent"><IoIosArrowBack className="" size={50} /></button>
-        <button className="btn-next absolute h-full z-1 top-0 right-0 text-white px-5 hover:bg-linear-to-l hover:from-black/60 hover:to-transparent"><IoIosArrowForward size={50} /></button>
+        <button className="btn-next absolute top-0 left-0 h-full z-1 px-5 text-white group">
+          <span className="absolute inset-0 bg-linear-to-r from-black/60 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"/>
+          <IoIosArrowBack size={50} className="relative z-1" />
+        </button>
+        <button className="btn-next absolute top-0 right-0 h-full z-1 px-5 text-white group">
+          <span className="absolute inset-0 bg-linear-to-l from-black/60 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"/>
+          <IoIosArrowForward size={50} className="relative z-1" />
+        </button>
       </div>
       <div className="col-span-1 h-150">
         <Swiper
           onSwiper={setThumbs}
-          modules={[Thumbs,FreeMode]}
+          modules={[Thumbs, FreeMode]}
           direction="vertical"
           slidesPerView={4}
           spaceBetween={20}

@@ -18,11 +18,10 @@ import Register from './Register';
 function Navbar() {
   const navigate = useNavigate();
   const {pathname} = useLocation();
-  console.log(pathname)
   const {t} = useTranslation()
   const [open,setOpen] = useState<boolean>(false)
   return (
-    <div className='bg-white py-2 text-custom-blue h-15 shadow-lg sticky top-0'>
+    <div className='bg-white py-2 text-custom-blue h-15 shadow-lg sticky top-0 z-10'>
       <div onClick={()=>setOpen(false)} className={"absolute top-15 left-0 w-full h-[calc(100vh-118px)] backdrop-blur-[2px] "+(open ? "scale-100" : "scale-0")}></div>
       <div className="relative container mx-auto px-3 flex items-center h-full">
         <Category open={open} setOpen={setOpen}/>

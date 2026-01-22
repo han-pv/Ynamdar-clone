@@ -1,0 +1,58 @@
+import { useState } from 'react'
+import { product2 } from '../assets/images'
+import { IoMdHeart, IoMdHeartEmpty } from 'react-icons/io'
+import { BsCart2 } from 'react-icons/bs'
+import { BiSolidLeftArrow, BiSolidRightArrow } from 'react-icons/bi'
+import type { ProductCardProps } from '../types/Product'
+
+function ProductCard({ data }: { data: ProductCardProps }) {
+  const [like, setLike] = useState(false)
+  const [count, setCount] = useState(0)
+
+  return (
+    <div className={' bg-white rounded-md border p-5 flex flex-col justify-between ' + (count ? "border-custom-orange" : "border-gray-300")}>
+      <div>
+        <div className='relative border border-gray-200 rounded-xl overflow-hidden'>
+          <img src={product2} alt="" />
+          {
+            data.discount > 0 &&
+            <div className="absolute bg-red-600 rounded-xl text-white font-semibold py-1 px-3 bottom-2 left-2">
+              -{data.discount}%
+            </div>
+          }
+        </div>
+        <div className='py-2 font-semibold'>{data.name}</div>
+        <div className='py-1 text-gray-500'>{data.definition}</div>
+      </div>
+      <div>
+        <div className="flex items-end py-1">
+          <div className='text-xl font-bold'>{data.price - (data.price / 100 * data.discount)} m.</div>
+          {
+            data.discount > 0 &&
+            <del className='text-gray-500 px-2 font-semibold'>{data.price} m.</del>
+          }
+        </div>
+        <div className='flex items-center'>
+          <button onClick={() => setLike(!like)} className='border h-10 w-10 border-gray-300 rounded-md p-2 text-center'>
+            {like ? <IoMdHeart size={24} className='text-custom-orange ' /> : <IoMdHeartEmpty size={24} className='text-custom-orange ' />}
+          </button>
+          {
+            count ?
+              <div className='w-full h-10 ml-3 text-white bg-custom-orange flex justify-between items-center rounded-md overflow-hidden'>
+                <button onClick={() => setCount(count - 1)} className='hover:bg-[#f39357] active:bg-[#ca4619] h-10 w-10 flex items-center justify-center bg-custom-orange'><BiSolidLeftArrow size={20} /></button>
+                <span className='font-bold'>{count} Sany</span>
+                <button onClick={() => setCount(count + 1)} className='hover:bg-[#f39357] active:bg-[#ca4619] h-10 w-10 flex items-center justify-center bg-custom-orange'><BiSolidRightArrow size={20} /></button>
+              </div> :
+              <button onClick={() => setCount(1)} className='w-full transition-all hover:opacity-75 h-10 ml-3 text-white bg-custom-orange flex justify-center items-center rounded-md'>
+                <BsCart2 size={24} />
+              </button>
+          }
+
+        </div>
+      </div>
+
+    </div>
+  )
+}
+
+export default ProductCard

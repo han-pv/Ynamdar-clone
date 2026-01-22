@@ -3,6 +3,8 @@ import Main from "./pages/Main"
 import Header from "./components/Header"
 import Brands from "./pages/Brands"
 import Search from "./pages/Search"
+import Footer from "./components/Footer"
+import GoToTop from "./components/GoToTop"
 
 function App() {
   // const {pathname} = useLocation()
@@ -20,6 +22,8 @@ function App() {
         <Route path="/brands" element={<Brands />}/>
         <Route path="/search" element={<Search />}/>
       </Routes>
+      <GoToTop />
+      <Footer />
     </>
   )
 }
