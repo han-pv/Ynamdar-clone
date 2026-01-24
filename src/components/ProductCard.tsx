@@ -20,6 +20,12 @@ function ProductCard({ data }: { data: ProductCardProps }) {
               -{data.discount}%
             </div>
           }
+          {
+            data.isNew &&
+            <div className="absolute bg-red-600 rounded-br-xl text-white font-semibold p-0.5 top-0 left-0">
+              <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-5 w-5"><path d="M6 0L4.36364 4.36364L0 6L4.36364 7.63636L6 12L7.63636 7.63636L12 6L7.63636 4.36364L6 0Z" fill="white"></path></svg>
+            </div>
+          }
         </div>
         <div className='py-2 font-semibold'>{data.name}</div>
         <div className='py-1 text-gray-500'>{data.definition}</div>

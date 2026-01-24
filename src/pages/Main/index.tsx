@@ -1,8 +1,8 @@
-import Banner from "../components/Banner"
-import CategoryMain from "../components/CategoryMain"
-import categoryProducts from "../data/categoryWithProduct.json"
+import Banner from "./components/Banner"
+import CategoryMain from "./components/CategoryMain"
+import categoryProducts from "../../data/categoryWithProduct.json"
 
-function Main() {
+function index() {
   return (
     <div className="container mx-auto px-3 my-6">
       <Banner />
@@ -16,4 +16,4 @@ function Main() {
   )
 }
 
-export default Main
+export default index

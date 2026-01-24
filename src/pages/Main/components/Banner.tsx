@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { Swiper, SwiperSlide } from "swiper/react"
-import { banner1, banner2, banner3, banner4, banner5 } from "../assets/images"
+import { banner1, banner2, banner3, banner4, banner5 } from "../../../assets/images"
 import { Pagination, Autoplay, Navigation, Thumbs, FreeMode } from "swiper/modules"
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io"
 import type { Swiper as SwiperType } from "swiper";

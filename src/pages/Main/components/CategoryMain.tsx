@@ -1,9 +1,9 @@
 import React from 'react'
-import ProductCard from './ProductCard'
+import ProductCard from '../../../components/ProductCard'
 import { Link } from 'react-router-dom'
 import { CgChevronDoubleLeftR } from 'react-icons/cg'
 import { BiRightArrow, BiRightArrowAlt } from 'react-icons/bi'
-import type { ProductCardProps } from '../types/Product'
+import type { ProductCardProps } from '../../../types/Product'
 
 
 
