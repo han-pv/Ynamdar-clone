@@ -1,0 +1,21 @@
+1. npm i json-server  => For using fake backend minimalny easy
+2. npx json-server --watch ./data/brand.json --port 5000  => start json file like db
+3. npm install @tanstack/react-query @tanstack/react-query-devtools
+4. step1-> UI asks for data from query;
+   step2-> Query checks the cache;
+   step3-> If the cache is empty or "stale" it fetchs from the server;
+   step4-> It stores the result to the cache and updates the ui;
+5. Set react query to main.tsx
+    import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+    import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+
+    const queryClient = new QueryClient();
+
+  wrap all code
+    <QueryClientProvider client={queryClient}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+      <ReactQueryDevtools initialIsOpen={false} />
+    </QueryClientProvider>
+6.npm install axios => Backendden maglumat chekip beryan function
