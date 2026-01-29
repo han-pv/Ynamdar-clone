@@ -38,14 +38,15 @@ function Category({ open, setOpen }: CategoryPropType) {
             categories.map((category, key) => {
               const Icon = (icons as any)[category.icon]
               return (
-                <button
+                <Link to={"category/" + active.id}
+                  onClick={()=>setOpen(false)}
                   onMouseEnter={() => setActive(category)}
                   key={"category-" + key}
                   className={"flex items-center gap-3 w-full border text-left mb-2 border-orange-200 rounded py-1 px-3 " + (active.id == category.id ? "bg-custom-orange/10 text-custom-orange" : "")}
                 >
                   <Icon className="text-custom-orange" />
                   {category.name}
-                </button>
+                </Link>
               )
             })
           }
@@ -57,12 +58,12 @@ function Category({ open, setOpen }: CategoryPropType) {
             {
               active.subcategories.map((sub, index) => (
                 <div key={'subcategory-' + index}>
-                  <Link onClick={()=>setOpen(false)} className="block pl-2 hover:text-custom-orange text-lg font-semibold" to={"category/" + sub.id}>{sub.name}</Link>
+                  <Link onClick={()=>setOpen(false)} className="inline-block pl-2 hover:text-custom-orange text-lg font-semibold" to={"category/" + sub.id}>{sub.name}</Link>
 
-                  <div className="my-2">
+                  <div className="my-2 flex flex-col">
                     {
                       sub.subcategories && sub.subcategories.map((subsub, index2) => (
-                        <Link onClick={()=>setOpen(false)} key={"subsubcategory-" + index2} to={"category/" + subsub.id} className="block pl-4 hover:text-custom-orange">{subsub.name}</Link>
+                        <Link onClick={()=>setOpen(false)} key={"subsubcategory-" + index2} to={"category/" + subsub.id} className="inline-block w-fit pl-4 hover:text-custom-orange">{subsub.name}</Link>
                       ))
                     }
                   </div>

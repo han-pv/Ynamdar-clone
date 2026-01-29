@@ -15,3 +15,35 @@ body{
   --color-custom-blue: #4b5563;
   --color-custom-green: #4bb543;
 }
+
+
+.dots {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.dots div {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  animation: fade 0.8s ease-in-out alternate infinite;
+}
+
+.dots div:nth-of-type(2) {
+  animation-delay: -0.2s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 1;
+    height: 20px;
+    width: 20px;
+  }
+  to {
+    opacity: 0.5;
+    height: 12px;
+    width: 12px;
+  }
+}
