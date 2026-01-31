@@ -3,11 +3,42 @@ import { useParams } from 'react-router-dom'
 import categories from "../../data/category.json"
 import Sidebar from '../../components/Sidebar';
 import type { CategoryType } from '../../types/Category';
+import { useGetAllBrands } from '../../queries/brands';
+import type { categoryBrandType } from '../../api/brands';
+import { useGetAllProducts } from '../../queries/products';
+import ProductCard from '../../components/ProductCard';
+import nProgress from 'nprogress';
 
 
 function index() {
   const {id} = useParams()
   const [category,setCategory] = useState<CategoryType | undefined>(undefined)
+  const brands = useGetAllBrands()
+  const products = useGetAllProducts()
+
+  const [data,setData] = useState<{order:string,brands:string[]}>({
+    order:"",
+    brands:[]
+  })
+
+  const selectBrands = (data:categoryBrandType[] | undefined)=>{
+    if (!data) return []
+    const collectBrands = []
+    for(let i = 0; i<data.length; i++){
+      for(let j = 0; j<data[i].brands.length; j++){
+        collectBrands.push(data[i].brands[j])
+      }
+    }
+    return collectBrands
+  }
+
+  useEffect(()=>{
+    if (brands.isLoading || products.isLoading){
+      nProgress.start()
+    }else{
+      nProgress.done()
+    }
+  },[brands.isLoading,products.isLoading])
   
   useEffect(()=>{
     const findCategory = (categories:CategoryType[],id:number):CategoryType | undefined=>{
@@ -27,13 +58,19 @@ function index() {
   },[id])
   
   return (
-    <div className='container mx-auto px-3 mt-5'>
+    <div className='container mx-auto px-3 my-5'>
       <h1 className='text-3xl font-bold'>{category?.name}</h1>
-      <div className='text-gray-500 mb-5'>Jemi: <span className='font-medium'>4585</span> haryt</div>
+      <div className='text-gray-500 mb-5'>Jemi: <span className='font-medium'>{products.data?.length}</span> haryt</div>
       
-      <div>
-        <Sidebar categories={category} />
-        <div className='w-3/4 grid-cols-4'></div>
+      <div className='flex gap-3'>
+        <Sidebar categories={category} brands={selectBrands(brands.data)} data={data} setData={setData}/>
+        <div className='w-3/4 grid grid-cols-4 gap-3'>
+          {
+            products.data && products.data.map((product)=>(
+              <ProductCard key={"category-page-products-"+product.id} data={product}/>
+            )) 
+          }
+        </div>
       </div>
     </div>
   )

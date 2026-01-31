@@ -1,0 +1,13 @@
+1. Top Loading
+2. npm install nprogress, npm install --save-dev @types/nprogress
+3. import 'nprogress/nprogress.css' => to the mian.tsx
+4. Use like
+    useEffect(()=>{
+      if (isLoading){
+        nProgress.start()
+      }else{
+        nProgress.done()
+      }
+    },[isLoading])
+5. Sidebar brand
+6. Category products
