@@ -2,7 +2,7 @@
   "brands": [
     {
       "category": "Electronics",
-      "category_id": 1,
+      "categoryId": 1,
       "brands": [
         {
           "name": "Samsung",
@@ -28,7 +28,7 @@
     },
     {
       "category": "Clothing",
-      "category_id": 2,
+      "categoryId": 2,
       "brands": [
         {
           "name": "Urban Wear",
@@ -49,7 +49,7 @@
     },
     {
       "category": "Home & Kitchen",
-      "category_id": 3,
+      "categoryId": 3,
       "brands": [
         {
           "name": "Oak & Iron",
@@ -65,7 +65,7 @@
     },
     {
       "category": "Books",
-      "category_id": 4,
+      "categoryId": 4,
       "brands": [
         {
           "name": "DevPress",
@@ -89,7 +89,57 @@
       "image": "/images/products/s23.jpg",
       "quantity": 12,
       "discount": 10,
-      "isNew": true
+      "isNew": true,
+      "categoryId": 111,
+      "categoryName": "Android Phones"
+    },
+    {
+      "id": 1005,
+      "name": "Samsung Galaxy A52",
+      "definition": "Tast Latest Android smartphone with powerful performance",
+      "price": 700,
+      "image": "/images/products/s23.jpg",
+      "quantity": 12,
+      "discount": 10,
+      "isNew": true,
+      "categoryId": 111,
+      "categoryName": "Android Phones"
+    },
+    {
+      "id": 1006,
+      "name": "Huawei mate xt 3",
+      "definition": "Latest Android smartphone with powerful performance",
+      "price": 1000,
+      "image": "/images/products/s23.jpg",
+      "quantity": 12,
+      "discount": 10,
+      "isNew": true,
+      "categoryId": 111,
+      "categoryName": "Android Phones"
+    },
+    {
+      "id": 1007,
+      "name": "Redmagic 11 pro+",
+      "definition": "Tast Latest Android smartphone with powerful performance",
+      "price": 20000,
+      "image": "/images/products/s23.jpg",
+      "quantity": 12,
+      "discount": 10,
+      "isNew": true,
+      "categoryId": 111,
+      "categoryName": "Android Phones"
+    },
+    {
+      "id": 1008,
+      "name": "One plus 15",
+      "definition": "Tast Latest Android smartphone with powerful performance",
+      "price": 200,
+      "image": "/images/products/s23.jpg",
+      "quantity": 12,
+      "discount": 10,
+      "isNew": true,
+      "categoryId": 111,
+      "categoryName": "Android Phones"
     },
     {
       "id": 1002,
@@ -99,7 +149,9 @@
       "image": "/images/products/iphone15.jpg",
       "quantity": 8,
       "discount": 0,
-      "isNew": true
+      "isNew": true,
+      "categoryId": 112,
+      "categoryName": "iPhones"
     },
     {
       "id": 1003,
@@ -109,7 +161,9 @@
       "image": "/images/products/gaming-laptop.jpg",
       "quantity": 5,
       "discount": 15,
-      "isNew": false
+      "isNew": false,
+      "categoryId": 121,
+      "categoryName": "Gaming Laptops"
     },
     {
       "id": 1004,
@@ -119,7 +173,9 @@
       "image": "/images/products/headphones.jpg",
       "quantity": 20,
       "discount": 5,
-      "isNew": false
+      "isNew": false,
+      "categoryId": 13,
+      "categoryName": "Accessories"
     },
     {
       "id": 2001,
@@ -129,7 +185,9 @@
       "image": "/images/products/tshirt.jpg",
       "quantity": 50,
       "discount": 20,
-      "isNew": true
+      "isNew": true,
+      "categoryId": 211,
+      "categoryName": "T-Shirts"
     },
     {
       "id": 2002,
@@ -139,7 +197,9 @@
       "image": "/images/products/dress.jpg",
       "quantity": 14,
       "discount": 10,
-      "isNew": false
+      "isNew": false,
+      "categoryId": 221,
+      "categoryName": "Dresses"
     },
     {
       "id": 2003,
@@ -149,7 +209,9 @@
       "image": "/images/products/kids-jeans.jpg",
       "quantity": 30,
       "discount": 0,
-      "isNew": true
+      "isNew": true,
+      "categoryId": 23,
+      "categoryName": "Kids"
     },
     {
       "id": 2004,
@@ -159,7 +221,9 @@
       "image": "/images/products/men-jeans.jpg",
       "quantity": 22,
       "discount": 15,
-      "isNew": false
+      "isNew": false,
+      "categoryId": 212,
+      "categoryName": "Jeans"
     },
     {
       "id": 3001,
@@ -169,7 +233,9 @@
       "image": "/images/products/table.jpg",
       "quantity": 6,
       "discount": 10,
-      "isNew": false
+      "isNew": false,
+      "categoryId": 31,
+      "categoryName": "Furniture"
     },
     {
       "id": 3002,
@@ -179,7 +245,9 @@
       "image": "/images/products/knives.jpg",
       "quantity": 18,
       "discount": 20,
-      "isNew": true
+      "isNew": true,
+      "categoryId": 322,
+      "categoryName": "Knives"
     },
     {
       "id": 3003,
@@ -189,7 +257,9 @@
       "image": "/images/products/pan.jpg",
       "quantity": 25,
       "discount": 0,
-      "isNew": false
+      "isNew": false,
+      "categoryId": 321,
+      "categoryName": "Pans"
     },
     {
       "id": 3004,
@@ -199,7 +269,9 @@
       "image": "/images/products/chair.jpg",
       "quantity": 10,
       "discount": 5,
-      "isNew": true
+      "isNew": true,
+      "categoryId": 31,
+      "categoryName": "Furniture"
     },
     {
       "id": 4001,
@@ -209,7 +281,9 @@
       "image": "/images/products/js-book.jpg",
       "quantity": 40,
       "discount": 10,
-      "isNew": true
+      "isNew": true,
+      "categoryId": 411,
+      "categoryName": "JavaScript"
     },
     {
       "id": 4002,
@@ -219,7 +293,9 @@
       "image": "/images/products/python-book.jpg",
       "quantity": 35,
       "discount": 0,
-      "isNew": false
+      "isNew": false,
+      "categoryId": 412,
+      "categoryName": "Python"
     },
     {
       "id": 4003,
@@ -229,7 +305,9 @@
       "image": "/images/products/history.jpg",
       "quantity": 20,
       "discount": 15,
-      "isNew": false
+      "isNew": false,
+      "categoryId": 42,
+      "categoryName": "History"
     },
     {
       "id": 4004,
@@ -239,7 +317,9 @@
       "image": "/images/products/clean-code.jpg",
       "quantity": 18,
       "discount": 5,
-      "isNew": true
+      "isNew": true,
+      "categoryId": 41,
+      "categoryName": "Programming"
     }
   ]
 }

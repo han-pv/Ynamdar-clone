@@ -1,11 +1,11 @@
 import { useQuery } from "@tanstack/react-query"
 import { getAllBrands } from "../api/brands";
 
-export const useGetAllBrands = ()=>{
+export const useGetAllBrands = (id:string | undefined)=>{
   return useQuery({
-    queryKey: [`brands`],
+    queryKey: [`brands ${id}`],
     queryFn: () => {
-      return getAllBrands()
+      return getAllBrands(id)
     },
     staleTime: Infinity,
     // staleTime:1000*5,

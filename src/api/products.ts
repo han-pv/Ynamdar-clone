@@ -1,7 +1,16 @@
 import axios from "axios";
 import type { ProductCardProps } from "../types/Product";
 
-export const getAllProducts = async()=>{
-  const {data} = await axios.get<ProductCardProps[]>("http://localhost:5000/products")
+export const getAllProducts = async(id:string|undefined,order:string,brands:string[])=>{
+  let newOrder = ""
+  console.log(order)
+  if (order == 'asc'){
+    newOrder = "-price"
+  }else if(order == 'desc'){
+    newOrder = "price"
+  }
+  const {data} = await axios.get<ProductCardProps[]>(`http://localhost:5000/products?categoryId=${id}&_sort=${newOrder}`)
   return data
 }
+
+// _sort=price , _sort=-price

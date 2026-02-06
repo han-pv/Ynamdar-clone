@@ -13,7 +13,7 @@ export type categoryBrandType = {
   brands:brandType[]
 }
 
-export const getAllBrands = async()=>{
-  const {data} = await axios.get<categoryBrandType[]>("http://localhost:5000/brands")
+export const getAllBrands = async(id:string | undefined)=>{
+  const {data} = await axios.get<categoryBrandType[]>(`http://localhost:5000/brands?categoryId=${id}`)
   return data
 }

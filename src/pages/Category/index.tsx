@@ -13,13 +13,13 @@ import nProgress from 'nprogress';
 function index() {
   const {id} = useParams()
   const [category,setCategory] = useState<CategoryType | undefined>(undefined)
-  const brands = useGetAllBrands()
-  const products = useGetAllProducts()
-
   const [data,setData] = useState<{order:string,brands:string[]}>({
     order:"",
     brands:[]
   })
+  
+  const brands = useGetAllBrands(id)
+  const products = useGetAllProducts(id,data.order,data.brands)
 
   const selectBrands = (data:categoryBrandType[] | undefined)=>{
     if (!data) return []
@@ -64,7 +64,7 @@ function index() {
       
       <div className='flex gap-3'>
         <Sidebar categories={category} brands={selectBrands(brands.data)} data={data} setData={setData}/>
-        <div className='w-3/4 grid grid-cols-4 gap-3'>
+        <div className='w-3/4 grid grid-cols-4 gap-3 h-fit'>
           {
             products.data && products.data.map((product)=>(
               <ProductCard key={"category-page-products-"+product.id} data={product}/>

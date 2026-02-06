@@ -48,3 +48,13 @@ body {
     width: 12px;
   }
 }
+
+/* Change the color of the bar */
+#nprogress .bar {
+  background: linear-gradient(to right, #2ecc71, #3498db) !important;
+  height: 3.5px !important;
+}
+
+#nprogress .spinner{
+  display: none;
+}

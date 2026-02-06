@@ -1,0 +1,4 @@
+1. Change style of top loader
+2. Get products by its category
+3. _sort=price, -price,  ,name=Samsung (exact search)
+4. Product icini yasamaly

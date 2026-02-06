@@ -2,11 +2,11 @@ import { useQuery } from "@tanstack/react-query"
 import { getAllProducts } from "../api/products";
 
 
-export const useGetAllProducts = ()=>{
+export const useGetAllProducts = (id:string | undefined,order:string,brands:string[])=>{
   return useQuery({
-    queryKey: [`products`],
+    queryKey: [`products ${id} ${order} ${brands}`],
     queryFn: () => {
-      return getAllProducts()
+      return getAllProducts(id,order,brands)
     },
     staleTime: Infinity,
     // staleTime:1000*5,

@@ -27,8 +27,8 @@ function ProductCard({ data }: { data: ProductCardProps }) {
             </div>
           }
         </div>
-        <div className='py-2 font-semibold'>{data.name}</div>
-        <div className='py-1 text-gray-500'>{data.definition}</div>
+        <div className='py-2 font-semibold line-clamp-2'>{data.name}</div>
+        <div className='py-1 text-gray-500 line-clamp-2'>{data.definition}</div>
       </div>
       <div>
         <div className="flex items-end py-1">
