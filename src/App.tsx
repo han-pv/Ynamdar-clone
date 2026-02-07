@@ -6,6 +6,7 @@ import Footer from "./components/Footer"
 import GoToTop from "./components/GoToTop"
 import Category from "./pages/Category"
 import NotFound from "./pages/NotFound"
+import Search from "./pages/Search"
 
 function App() {
   // const {pathname} = useLocation()
@@ -22,6 +23,7 @@ function App() {
         <Route path="/" element={<Main />}/>
         <Route path="/category/:id" element={<Category />}/>
         <Route path="/brands" element={<Brands />}/>
+        <Route path="/search/:keyword" element={<Search />}/>
         <Route path="*" element={<NotFound />} />
       </Routes>
       <GoToTop />

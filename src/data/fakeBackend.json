@@ -1,4 +1,61 @@
 {
+  "brandsByKeyword": [
+    {
+      "name": "Samsung",
+      "id": "BR-1001",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg"
+    },
+    {
+      "name": "Apple",
+      "id": "BR-1002",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
+    },
+    {
+      "name": "Generic Gaming",
+      "id": "BR-1003",
+      "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e"
+    },
+    {
+      "name": "Audio-Tech",
+      "id": "BR-1004",
+      "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e"
+    },
+    {
+      "name": "Urban Wear",
+      "id": "BR-2001",
+      "image": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab"
+    },
+    {
+      "name": "Elegance Soft",
+      "id": "BR-2002",
+      "image": "https://images.unsplash.com/photo-1496747611176-843222e1e57c"
+    },
+    {
+      "name": "Junior Denim",
+      "id": "BR-2003",
+      "image": "https://images.unsplash.com/photo-1519457431-758c442759e4"
+    },
+    {
+      "name": "Oak & Iron",
+      "id": "BR-3001",
+      "image": "https://images.unsplash.com/photo-1530018607912-eff2df114f11"
+    },
+    {
+      "name": "ChefPro",
+      "id": "BR-3002",
+      "image": "https://images.unsplash.com/photo-1593618998160-e34014e67546"
+    },
+    {
+      "name": "DevPress",
+      "id": "BR-4001",
+      "image": "https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45"
+    },
+    {
+      "name": "Scholar Hub",
+      "id": "BR-4003",
+      "image": "https://images.unsplash.com/photo-1497633762265-9d179a990aa6"
+    }
+  ],
   "brands": [
     {
       "category": "Electronics",
@@ -86,6 +143,18 @@
       "name": "Samsung Galaxy S23",
       "definition": "Latest Android smartphone with powerful performance",
       "price": 899,
+      "image": "/images/products/s23.jpg",
+      "quantity": 12,
+      "discount": 10,
+      "isNew": true,
+      "categoryId": 111,
+      "categoryName": "Android Phones"
+    },
+    {
+      "id": 1091,
+      "name": "Samsung Galaxy S23",
+      "definition": "Latest Android smartphone with powerful performance",
+      "price": 1000,
       "image": "/images/products/s23.jpg",
       "quantity": 12,
       "discount": 10,

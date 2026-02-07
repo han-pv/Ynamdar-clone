@@ -4,8 +4,8 @@ import type { brandType } from '../api/brands'
 import { useState } from 'react'
 
 type SidebarPropsType = {
-  categories: CategoryType | undefined,
-  brands: brandType[],
+  categories?: CategoryType | undefined,
+  brands?: brandType[],
   data: { order: string, brands: string[] },
   setData: (data: { order: string, brands: string[] }) => void
 }
@@ -22,7 +22,6 @@ function Sidebar({ categories, brands, data, setData }: SidebarPropsType) {
       setData({ ...data, brands: [...data.brands, brand.id] })
     }
   }
-  console.log(brands)
   return (
     <div className='w-1/4 border border-gray-300 py-5 px-4 bg-white rounded h-fit'>
       {
@@ -89,7 +88,7 @@ function Sidebar({ categories, brands, data, setData }: SidebarPropsType) {
         </div>
       </div>
       {
-        brands.length > 0 &&
+        brands && brands.length > 0 &&
         <div className='mb-4'>
           <div className='text-black font-semibold text-xl'>
             Brands

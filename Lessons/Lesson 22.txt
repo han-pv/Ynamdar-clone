@@ -1,0 +1,2 @@
+1. Change port => inside vite.config.ts file write server:{port:3000},
+2. Brand search

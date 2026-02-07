@@ -9,14 +9,30 @@ import nProgress from "nprogress"
 function index() {
   const [keyword, setKeyword] = useState<string>("")
   const { data, isLoading, isError, error } = useGetAllBrands()
+  
+  const filterBrands = () => {
+    if (!data) return []
 
-  useEffect(()=>{
-    if (isLoading){
+    const categories = []
+    for (let i = 0; i < data.length; i++) {
+      const brands = []
+      for (let j = 0; j < data[i].brands.length; j++){
+        if(data[i].brands[j].name.toLocaleLowerCase().includes(keyword.toLocaleLowerCase())){
+          brands.push(data[i].brands[j])
+        }
+      }
+      if (brands.length) categories.push({...data[i],brands:brands})
+    }
+    return categories
+  }
+
+  useEffect(() => {
+    if (isLoading) {
       nProgress.start()
-    }else{
+    } else {
       nProgress.done()
     }
-  },[isLoading])
+  }, [isLoading])
 
   if (isLoading) return <Loading />
   else if (isError) return <Error error={error} />
@@ -25,13 +41,17 @@ function index() {
       <div className="my-6">
         <Search keyword={keyword} setKeyword={setKeyword} />
       </div>
-      {data && data.map((category) => (
-        <div key={category.category_id}>
+      {data && filterBrands().map((category) => (
+        <div key={category.categoryId}>
           <div className="text-2xl font-bold py-2" >{category.category}</div>
           <div className="grid grid-cols-6 gap-5 mb-5">
-            {category.brands.map((brand) => (
-              <div key={"category-page-brand-"+brand.id}><BrandCard data={brand} /></div>
-            ))}
+            {category.brands.map((brand) => {
+              if (brand.name.toLocaleLowerCase().includes(keyword.toLocaleLowerCase())) {
+                return (
+                  <div key={"category-page-brand-" + brand.id}><BrandCard data={brand} /></div>
+                )
+              }
+            })}
           </div>
         </div>
       ))}
