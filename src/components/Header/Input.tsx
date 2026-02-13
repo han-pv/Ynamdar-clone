@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import type { InputProp } from '../../types/Header'
-import { BsEye, BsEyeSlash, BsEyeSlashFill } from 'react-icons/bs'
+import { BsEye, BsEyeSlash } from 'react-icons/bs'
 import { useTranslation } from 'react-i18next'
 
 function Input(props: InputProp) {
@@ -29,6 +29,7 @@ function Input(props: InputProp) {
           onChange={(e) => { props.onChange(e), checkValidate(e) }}
           name={props.name}
           type={props.type !== "password" ? props.type : visible ? "text" : "password"}
+          autoComplete={props.type == "password" ? 'off' : "on"}
         />
 
         {

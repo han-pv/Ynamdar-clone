@@ -390,5 +390,15 @@
       "categoryId": 41,
       "categoryName": "Programming"
     }
+  ],
+  "users": [
+    {
+      "id": "715d",
+      "phone": "64813333",
+      "fullname": "Kyyas",
+      "email": "",
+      "password": "123123",
+      "passwordConfirm": "123123"
+    }
   ]
 }
