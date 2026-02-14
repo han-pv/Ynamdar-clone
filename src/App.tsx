@@ -7,6 +7,7 @@ import GoToTop from "./components/GoToTop"
 import Category from "./pages/Category"
 import NotFound from "./pages/NotFound"
 import Search from "./pages/Search"
+import { Toaster } from 'react-hot-toast';
 
 function App() {
   // const {pathname} = useLocation()
@@ -16,9 +17,9 @@ function App() {
       {/* {
         pathname !== "/orders" && <Header />
       } */}
-      
+      <Toaster position="bottom-right" reverseOrder={false}/>
       <Header />
-
+      
       <Routes>
         <Route path="/" element={<Main />}/>
         <Route path="/category/:id" element={<Category />}/>

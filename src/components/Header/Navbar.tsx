@@ -5,8 +5,6 @@ import Button from './Button';
 import Search from './Search';
 import Language from './Language';
 import Stick from './Stick';
-import { GrLogin } from 'react-icons/gr';
-import { GoPersonAdd } from 'react-icons/go';
 import { RxArchive } from 'react-icons/rx';
 import { IoMdHeartEmpty } from 'react-icons/io';
 import { BsCart2 } from 'react-icons/bs';
@@ -15,6 +13,8 @@ import { useTranslation } from 'react-i18next';
 import Login from './Login';
 import Register from './Register';
 import { useUserStore } from '../../store/user';
+import Profile from './Profile';
+import InfoPopup from './InfoPopup';
 
 function Navbar() {
   const navigate = useNavigate();
@@ -34,14 +34,19 @@ function Navbar() {
         <Search />
         <Language />
         <Stick />
-        {token}
+
         {
-          token.length ? <>
-            <Login />
-            <Stick />
-            <Register />
-          </> : <div>Hosh geldin</div>
+          !token
+            ?
+            <>
+              <Login />
+              <Stick />
+              <Register />
+            </>
+            :
+            <Profile />
         }
+
         <Stick />
         <Button action={() => navigate('orders')} active={pathname === "/orders"}>
           <RxArchive size={20} className='text-custom-blue font-bold' />
@@ -55,6 +60,8 @@ function Navbar() {
           <BsCart2 size={20} className='text-custom-blue font-bold' />
         </Button>
       </div>
+
+      <InfoPopup />
     </div>
   )
 }

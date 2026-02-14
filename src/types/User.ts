@@ -8,6 +8,11 @@ export type UserDataT = {
 
 export type UserLoginDataT = {
   phone:string;
+  fullname:string;
+  address?:string;
+  gender?:string;
+  birthDate?:string;
+  cashback?:number;
   email:string;
   password:string;
   token?:string;

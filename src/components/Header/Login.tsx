@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { use, useEffect, useState } from 'react'
 import Button from './Button'
 import { GrLogin } from 'react-icons/gr'
 import { useTranslation } from 'react-i18next'
@@ -18,9 +18,9 @@ function Login() {
     password: "",
   })
   const [dataForget, setDataForget] = useState("")
-
   const { mutate, isSuccess } = useLogin()
-  const { setUser, setToken } = useUserStore(state => state)
+  const { token,user,setUser, setToken } = useUserStore(state => state)
+  console.log(user,token)
   const handleData = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value, name } = e.target
     setData({ ...data, [name]: value })
@@ -37,8 +37,9 @@ function Login() {
       email: "",
       password: "",
     })
-    setUser(JSON.parse(localStorage.getItem("user") || ""))
-    setToken(localStorage.getItem("token") || "")    
+
+    setUser(JSON.parse(localStorage.getItem("user") || "{}"))
+    setToken(localStorage.getItem("token") || "")
 
   }, [isSuccess])
 
