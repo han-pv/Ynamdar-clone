@@ -390,5 +390,31 @@
       "categoryId": 41,
       "categoryName": "Programming"
     }
+  ],
+  "users": [
+    {
+      "id": "715d",
+      "phone": "64813333",
+      "fullname": "Kyyas",
+      "email": "",
+      "password": "123123",
+      "passwordConfirm": "123123"
+    },
+    {
+      "id": "1e88",
+      "phone": "64822497",
+      "fullname": "Aymuhammet",
+      "email": "",
+      "password": "123123",
+      "passwordConfirm": "123123"
+    },
+    {
+      "id": "ed7e",
+      "phone": "",
+      "fullname": "Example",
+      "email": "Example@gmail.com",
+      "password": "mmmmmmmm",
+      "passwordConfirm": "mmmmmmmm"
+    }
   ]
 }

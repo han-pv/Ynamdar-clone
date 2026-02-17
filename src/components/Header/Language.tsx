@@ -17,7 +17,7 @@ function Language() {
   return (
     <OutClick action={()=>setOpen(false)}>
       <Button action={()=>setOpen(!open)}>
-        <GrLanguage size={24} className="text-custom-blue font-bold" />
+        <GrLanguage size={20} className="text-custom-blue font-bold" />
       </Button>
       
       <div className={"absolute top-12 bg-white py-1 px-2 rounded flex flex-col shadow transtion-all duration-200 "+(open ? "opacity-100 visible" : "opacity-0 invisible")}>

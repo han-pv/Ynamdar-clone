@@ -12,8 +12,8 @@ export type PopupProps = {
   title:string;
   setOpen:(open:boolean)=>void;
   children:ReactNode;
-  active:"phone" | "email";
-  setActive:(active:"phone" | "email")=>void;
+  active?:"phone" | "email";
+  setActive?:(active:"phone" | "email")=>void;
   sendData:()=>void;
 }
 

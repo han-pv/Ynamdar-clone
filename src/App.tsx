@@ -9,6 +9,7 @@ import NotFound from "./pages/NotFound"
 import Search from "./pages/Search"
 import AdminDashboard from "./pages/Admin/Dashboard"
 import { ThemeProvider } from "@/components/theme-provider"
+import { Toaster } from 'react-hot-toast';
 
 function App() {
   const { pathname } = useLocation()
@@ -19,7 +20,8 @@ function App() {
     <>
       <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
         {
-          !isAdminRoute && <Header />
+          !isAdminRoute && <><Header /><Toaster position="bottom-right" reverseOrder={false}/>
+      <Header /></>
         }
         <Routes>
           <Route path="/" element={<Main />} />
